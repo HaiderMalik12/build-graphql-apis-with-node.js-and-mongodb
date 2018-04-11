@@ -18,5 +18,8 @@
     "babel-preset-stage-2": "^6.11.0",
     "babel-register": "^6.11.6",
     "nodemon": "^1.10.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
   }
 }
