@@ -7,7 +7,10 @@ const PORT = 3000;
 
 app.use('/graphql', graphqlHTTP({
     graphiql: true,
-    schema
+    schema,
+    context: {
+        userId: 1
+    }
 }));
 app.get('/', (req, res) => {
     return res.json({
