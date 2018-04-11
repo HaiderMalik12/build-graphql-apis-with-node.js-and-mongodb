@@ -2,8 +2,13 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { resolvers } from './resolvers';
 
 const typeDefs = `
+type Product {
+    _id : ID
+    name: String!
+    qty: Int
+}
  type Query {
-     hello(msg: String!): String!
+     allProducts: [Product]
  }
 `
 export default makeExecutableSchema({
