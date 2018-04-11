@@ -18,6 +18,7 @@ type Product {
  type Mutation {
      createProduct(input: ProductInput) : Product
      updateProduct(_id: ID!, input: ProductInput) : Product
+     deleteProduct(_id: ID!) : Product
  }
 `
 export default makeExecutableSchema({
