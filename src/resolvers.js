@@ -7,6 +7,8 @@ const products = [{
     name: 'Nodejs course',
     qty: 1
 }]
+import Product from './models/product';
+
 export const resolvers = {
     Query: {
         allProducts() {
@@ -14,10 +16,8 @@ export const resolvers = {
         }
     },
     Mutation: {
-        createProduct(_, { input }) {
-            input._id = '12313';
-            products.push(input);
-            return input;
+        async createProduct(_, { input }) {
+            return await Product.create(input);
         }
     }
 }
