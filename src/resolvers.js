@@ -11,8 +11,8 @@ import Product from './models/product';
 
 export const resolvers = {
     Query: {
-        allProducts() {
-            return products
+        async allProducts() {
+            return await Product.find()
         }
     },
     Mutation: {
