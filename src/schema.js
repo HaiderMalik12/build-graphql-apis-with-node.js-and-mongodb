@@ -8,6 +8,7 @@ type Product {
     qty: Int
 }
  type Query {
+     getProduct(_id: ID) : Product
      allProducts: [Product]
  }
  input ProductInput{
