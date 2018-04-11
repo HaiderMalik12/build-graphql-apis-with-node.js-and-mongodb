@@ -12,5 +12,12 @@ export const resolvers = {
         allProducts() {
             return products
         }
+    },
+    Mutation: {
+        createProduct(_, { input }) {
+            input._id = '12313';
+            products.push(input);
+            return input;
+        }
     }
 }
