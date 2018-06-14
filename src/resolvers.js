@@ -7,7 +7,7 @@ const products = [{
     name: 'Nodejs course',
     qty: 1
 }]
-import Product from './models/product';
+import Product from './api/product/product.model';
 
 export const resolvers = {
     Query: {

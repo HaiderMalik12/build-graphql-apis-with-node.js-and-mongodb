@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import schema from './schema';
 import { GraphQLServer } from 'graphql-yoga'
-import graphqlConfig from './schema';
+import graphqlConfig from './api';
 
 const PORT = 3000;
 mongoose.Promise = global.Promise;
