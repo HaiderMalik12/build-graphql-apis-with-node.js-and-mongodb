@@ -1,4 +1,3 @@
-import { makeExecutableSchema } from 'graphql-tools';
 import { resolvers } from './resolvers';
 
 const typeDefs = `
@@ -21,7 +20,7 @@ type Product {
      deleteProduct(_id: ID!) : Product
  }
 `
-export default makeExecutableSchema({
+export default {
     typeDefs,
     resolvers
-});
+}
