@@ -1,0 +1,18 @@
+type User {
+    _id: ID!
+    email: String
+}
+
+type AuthPayload {
+    token : String
+    user: User
+}
+
+input AuthInput {
+    email : String!
+    password: String!
+}
+
+type Mutation {
+    sigup(input: AuthInput!) : AuthPayload
+}
