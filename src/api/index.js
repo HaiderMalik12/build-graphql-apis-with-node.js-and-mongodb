@@ -1,11 +1,13 @@
 import product from './product';
+import auth from './auth';
 
 export default {
-    resolvers : Object.assign({}, product.resolvers),
-    typeDefs : [product.typeDefs].join(' '),
-    context: {
-        models :{
-            product : product.model
-        }
+  resolvers: Object.assign({}, product.resolvers, auth.resolvers),
+  typeDefs: [product.typeDefs, auth.typeDefs].join(' '),
+  context: {
+    models: {
+      product: product.model,
+      user: auth.model
     }
-}
+  }
+};
