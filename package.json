@@ -26,6 +26,7 @@
     "graphql": "^0.13.2",
     "graphql-tools": "^2.24.0",
     "graphql-yoga": "^1.14.8",
+    "joi": "^13.4.0",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.0.14"
   }
