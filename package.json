@@ -28,6 +28,7 @@
     "graphql-yoga": "^1.14.8",
     "joi": "^13.4.0",
     "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
     "mongoose": "^5.0.14"
   }
 }
