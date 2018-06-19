@@ -15,4 +15,5 @@ input AuthInput {
 
 extend type Mutation {
     signup(input: AuthInput!) : AuthPayload!
+    login(input: AuthInput!) : AuthPayload!
 }
