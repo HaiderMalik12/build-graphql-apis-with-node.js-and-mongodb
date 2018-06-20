@@ -20,6 +20,7 @@
     "nodemon": "^1.10.0"
   },
   "dependencies": {
+    "apollo-server": "^2.0.0-beta.11",
     "bcryptjs": "^2.4.3",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",

@@ -5,10 +5,11 @@ import { merge } from 'lodash';
 export default {
   resolvers: merge({}, auth.resolvers, product.resolvers),
   typeDefs: [product.typeDefs, auth.typeDefs].join(' '),
-  context: {
+  context: req => ({
+    ...req,
     models: {
       product: product.model,
       user: auth.model
     }
-  }
+  })
 };
