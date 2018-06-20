@@ -15,6 +15,7 @@ async function requireAuth(resolver, parent, args, ctx, info) {
     throw new AuthenticationError('UnAuthenticated');
   }
   ctx.userId = user._id;
+  console.log('1. auth middleware run');
   return resolver(); //call the next resolver
 }
 

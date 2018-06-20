@@ -1,18 +1,24 @@
+type Owner {
+    _id: ID!
+    email: String!
+}
+
 type Product {
     _id : ID
     name: String!
     qty: Int
+    owner: Owner!
 }
  type Query {
-     getProduct(_id: ID) : Product
-     allProducts: [Product]
+     getProduct(_id: ID) : Product!
+     allProducts: [Product]!
  }
  input ProductInput{
     name: String!
     qty: Int
  }
  type Mutation {
-     createProduct(input: ProductInput) : Product
-     updateProduct(_id: ID!, input: ProductInput) : Product
-     deleteProduct(_id: ID!) : Product
+     createProduct(input: ProductInput!) : Product!
+     updateProduct(_id: ID!, input: ProductInput!) : Product!
+     deleteProduct(_id: ID!) : Product!
  }
