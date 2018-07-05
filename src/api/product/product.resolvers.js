@@ -26,8 +26,6 @@ export default {
   },
   Product: {
     async owner(product, args, ctx) {
-      console.log('Owner resolver run');
-      console.log(product);
       const owner = await ctx.models.user.findOne(
         {
           _id: product.owner
