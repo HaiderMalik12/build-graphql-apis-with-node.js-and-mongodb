@@ -1,7 +1,13 @@
 export default {
   Query: {
-    async allProducts(_, args, ctx) {
-      return await ctx.models.product.find();
+    async allProducts(_, { first = 10, skip = 0 }, ctx) {
+      return await ctx.models
+        .product
+        .find()
+        .select('_id name qty owner')
+        .skip(skip)
+        .limit(first);
+
     },
     async getProduct(_, { _id }, ctx) {
       return await ctx.models.product.findById(_id);
