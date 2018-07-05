@@ -1,9 +1,17 @@
 export default {
   Query: {
-    async allProducts(_, { first = 10, skip = 0 }, ctx) {
+    async allProducts(_, { first = 10, skip = 0, filter }, ctx) {
+      const query = filter
+        ?
+        {
+          $or: [
+            { name: filter }
+          ]
+        } :
+        {};
       return await ctx.models
         .product
-        .find()
+        .find(query)
         .select('_id name qty owner')
         .skip(skip)
         .limit(first);
@@ -15,7 +23,6 @@ export default {
   },
   Mutation: {
     async createProduct(_, { input }, ctx) {
-      console.log('2. Product parent resolver run');
       return await ctx.models.product.create({
         ...input,
         owner: ctx.userId
