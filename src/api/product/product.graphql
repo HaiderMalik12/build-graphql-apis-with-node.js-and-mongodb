@@ -11,7 +11,7 @@ type Product {
 }
  type Query {
      getProduct(_id: ID) : Product!
-     allProducts(skip: Int, first: Int, filter: String): [Product]!
+     allProducts(skip: Int, first: Int, filter: String, orderBy: String): [Product]!
  }
  input ProductInput{
     name: String!

@@ -1,6 +1,6 @@
 export default {
   Query: {
-    async allProducts(_, { first = 10, skip = 0, filter }, ctx) {
+    async allProducts(_, { first = 10, skip = 0, filter, orderBy }, ctx) {
       const query = filter
         ?
         {
@@ -14,7 +14,8 @@ export default {
         .find(query)
         .select('_id name qty owner')
         .skip(skip)
-        .limit(first);
+        .limit(first)
+        .sort(orderBy)
 
     },
     async getProduct(_, { _id }, ctx) {
