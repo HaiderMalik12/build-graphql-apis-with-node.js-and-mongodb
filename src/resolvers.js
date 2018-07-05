@@ -1,7 +1,9 @@
 export const resolvers = {
     Query: {
         hello(parent, args, ctx, info) {
-            return ' Hello GraphQL'
+            console.log(ctx.user);
+            console.log(info);
+            return args.msg;
         }
     }
 }

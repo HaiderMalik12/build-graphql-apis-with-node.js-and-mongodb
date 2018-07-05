@@ -4,7 +4,7 @@ import { resolvers } from './resolvers';
 
 const typeDefs = `
  type Query {
-     hello :  String
+     hello(msg: String!) :  String!
  }
 `
 export default makeExecutableSchema({
