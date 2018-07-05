@@ -14,6 +14,9 @@ export const resolvers = {
         },
         async updateProduct(_, { _id, input }) {
             return await Product.findOneAndUpdate({ _id }, input, { new: true })
+        },
+        async deleteProduct(_, { _id }) {
+            return await Product.findByIdAndRemove(_id);
         }
     }
 }
