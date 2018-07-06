@@ -8,10 +8,12 @@ type Product {
     name: String!
     qty: Int
     owner: Owner!
+    createdAt: String
 }
  type Query {
      getProduct(_id: ID) : Product!
      allProducts(skip: Int, first: Int, filter: String, orderBy: String): [Product]!
+     findAllProducts(first: Int, cursor: String) : [Product!]!
  }
  input ProductInput{
     name: String!

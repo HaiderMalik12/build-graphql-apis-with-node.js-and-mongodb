@@ -14,5 +14,5 @@ const ProductSchema = new Schema({
     type: Schema.Types.ObjectId,
     required: true
   }
-});
+}, { timestamps: true });
 export default mongoose.model('product', ProductSchema);

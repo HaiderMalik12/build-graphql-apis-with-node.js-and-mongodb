@@ -1,3 +1,5 @@
+import { parseDate } from "../../utils/util";
+
 export default {
   Query: {
     async allProducts(_, { first = 10, skip = 0, filter, orderBy }, ctx) {
@@ -16,6 +18,23 @@ export default {
         .skip(skip)
         .limit(first)
         .sort(orderBy)
+
+    },
+    async findAllProducts(_, { first = 10, cursor }, ctx) {
+      const query = {};
+      //cursor "12312313"
+      if (cursor) {
+        const date = parseDate(cursor);
+        query.createdAt = {
+          $lt: date
+        }
+      }
+      return await ctx.models
+        .product
+        .find(query)
+        .select('_id name qty createdAt owner')
+        .limit(first)
+        .sort('-createdAt')
 
     },
     async getProduct(_, { _id }, ctx) {
