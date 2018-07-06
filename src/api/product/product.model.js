@@ -9,6 +9,11 @@ const ProductSchema = new Schema({
   qty: {
     type: Number
   },
+  status: {
+    type: String,
+    enum: ['NEW', 'RELEASED', 'FAILED'],
+    default: 'NEW'
+  },
   owner: {
     ref: 'User',
     type: Schema.Types.ObjectId,

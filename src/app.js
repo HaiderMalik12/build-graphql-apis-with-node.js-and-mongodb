@@ -30,8 +30,8 @@ const server = new GraphQLServer({
   schema: protectedSchema,
   context: graphqlConfig.context
 });
-const dateInNumbers = getDateInNumbers();
-console.log(dateInNumbers);
-const date = parseDate(dateInNumbers);
-console.log(date);
+// const dateInNumbers = getDateInNumbers();
+// console.log(dateInNumbers);
+// const date = parseDate(dateInNumbers);
+// console.log(date);
 server.start(options, () => console.log('Server is running on localhost:3000'));

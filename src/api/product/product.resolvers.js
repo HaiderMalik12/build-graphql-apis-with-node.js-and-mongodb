@@ -14,7 +14,7 @@ export default {
       return await ctx.models
         .product
         .find(query)
-        .select('_id name qty owner')
+        .select('_id name qty owner createdAt status')
         .skip(skip)
         .limit(first)
         .sort(orderBy)
@@ -32,7 +32,7 @@ export default {
       return await ctx.models
         .product
         .find(query)
-        .select('_id name qty createdAt owner')
+        .select('_id name qty createdAt owner status')
         .limit(first)
         .sort('-createdAt')
 
