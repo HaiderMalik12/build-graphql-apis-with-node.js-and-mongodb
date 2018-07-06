@@ -1,0 +1,38 @@
+type Event {
+    id: ID!
+    name: String!
+    startsAt: String
+    endsAt: String
+    venue: String!
+    minAgeRestriction: Int
+    performingBand: String # Concert
+    performers: [String]  # Festival
+    speakers: [String] # Conference
+    workshops: [String] #Conference
+}
+
+extend type Query {
+    # Retrieve Events at a specific Venue
+    findEventsAtVenue(venue: String!): [Event]
+}
+enum EventType {
+    CONFERENCE
+    FESTIVAL
+    CONCERT
+}
+
+input newEventInput {
+    name: String!
+    type: EventType!
+    startsAt: String
+    endsAt: String
+    venue: String!
+    minAgeRestriction: Int
+    speakers: [String]
+    workshops: [String]
+    performers: [String]
+    performingBand: String
+}
+extend type Mutation {
+    newEvent(input: newEventInput!): Event!
+}
