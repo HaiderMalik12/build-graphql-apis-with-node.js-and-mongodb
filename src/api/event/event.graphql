@@ -1,4 +1,13 @@
-type Event {
+interface Event {
+    id: ID!
+    name: String!
+    startsAt: String
+    endsAt: String
+    venue: String!
+    minAgeRestriction: Int
+}
+
+type Concert implements Event{
     id: ID!
     name: String!
     startsAt: String
@@ -6,7 +15,23 @@ type Event {
     venue: String!
     minAgeRestriction: Int
     performingBand: String # Concert
+}
+type Festival implements Event {
+    id: ID!
+    name: String!
+    startsAt: String
+    endsAt: String
+    venue: String!
+    minAgeRestriction: Int
     performers: [String]  # Festival
+}
+type Conference implements Event {
+    id: ID!
+    name: String!
+    startsAt: String
+    endsAt: String
+    venue: String!
+    minAgeRestriction: Int
     speakers: [String] # Conference
     workshops: [String] #Conference
 }
