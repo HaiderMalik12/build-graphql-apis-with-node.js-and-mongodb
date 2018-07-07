@@ -9,4 +9,16 @@ export default {
       return await models.event.create(input);
     }
   },
+  Event: {
+    __resolveType(event) {
+      switch (event.type) {
+        case 'CONFERENCE':
+          return 'Conference'
+        case 'FESTIVAL':
+          return 'Festival'
+        case 'CONCERT':
+          return 'Concert'
+      }
+    }
+  }
 };
