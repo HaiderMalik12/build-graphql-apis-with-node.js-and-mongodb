@@ -6,17 +6,22 @@
   "scripts": {
     "start": "nodemon src/app.js --exec babel-node --presets env,stage-2",
     "build": "babel src -d dist --source-maps",
-    "serve": "node dist/app.js"
+    "serve": "node dist/app.js",
+    "test-server": "./reset_test_db.sh; TEST_DB=gql_test babel-node src/app.js --presets env,stage-2",
+    "test": "NODE_ENV=testing jest --forceExit --runInBand"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.11.4",
+    "babel-jest": "^23.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-2": "^6.11.0",
     "babel-register": "^6.11.6",
+    "jest": "^23.3.0",
     "nodemon": "^1.10.0"
   },
   "dependencies": {
