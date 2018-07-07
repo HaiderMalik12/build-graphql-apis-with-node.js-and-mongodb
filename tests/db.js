@@ -61,3 +61,4 @@ export {
     clearCollection,
     disConneectMongo
 }
+//chmod +x reset_test_db.sh
