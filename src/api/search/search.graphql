@@ -1,0 +1,5 @@
+union SearchResult = Product | Festival | Concert | Conference
+
+extend type Query {
+ search(name: String!): [SearchResult]
+}
