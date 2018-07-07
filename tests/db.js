@@ -1,28 +1,19 @@
 import Product from '../src/api/product/product.model';
 import Event from '../src/api/event/event.model';
+import User from '../src/api/auth/user.model';
 import mongoose from 'mongoose';
 mongoose.Promise = global.Promise
 
 const models = {
     product: Product,
-    event: Event
-}
-
-const cleanDB = async (done) => {
-    await models.event.remove({})
-    await models.product.remove({})
-    done()
+    event: Event,
+    user: User
 }
 
 const connectToDB = async () => {
     const connection = await mongoose.connect('mongodb://localhost/gql_test')
     return connection
 }
-
-const disconnectDB = (done = () => { }) => {
-    mongoose.disconnect(done)
-}
-
 
 const generateMongooseId = () => {
     return mongoose.Types.ObjectId()
@@ -53,9 +44,7 @@ function disConneectMongo(done) {
 
 
 export {
-    cleanDB,
     connectToDB,
-    disconnectDB,
     generateMongooseId,
     models,
     clearCollection,
