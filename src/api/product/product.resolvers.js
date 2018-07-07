@@ -63,13 +63,14 @@ export default {
   },
   Product: {
     async owner(product, args, ctx) {
-      const owner = await ctx.models.user.findOne(
-        {
-          _id: product.owner
-        },
-        '_id email'
-      );
-      return owner;
+      // const owner = await ctx.models.user.findOne(
+      //   {
+      //     _id: product.owner
+      //   },
+      //   '_id email'
+      // );
+      // return owner;
+      return await ctx.loaders.owner.load(product.owner)
     }
   },
   Subscription: {

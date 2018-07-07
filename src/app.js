@@ -9,6 +9,7 @@ import { getDateInNumbers, parseDate } from './utils/util';
 const PORT = 3000;
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/gql_db');
+mongoose.set('debug', true);
 
 const options = {
   tracing: true,
